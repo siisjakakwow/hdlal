@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anti Bypass</title>
+    <title>SpiderKey</title>
     <script>
-        
-        const token = "3a8e682adb0cb07705f22321089ef0174b0e9c9232a131b883b8c189c863288b";
-        const originalLink = "https://link-hub.net/1277016/keysystem";
+        document.addEventListener("DOMContentLoaded", function () {
+            const validToken = "3a8e682adb0cb07705f22321089ef0174b0e9c9232a131b883b8c189c863288b";
+            const urlParams = new URLSearchParams(window.location.search);
+            const userToken = urlParams.get("token");
 
-        
-        function checkBypass() {
-                const bypassDetected = false; // Ganti dengan logika deteksi yang sesuai
-
-            if (bypassDetected) {
-                 window.location.href = originalLink;
+            if (userToken === validToken) {
+                document.getElementById("result").innerText = "SpiderKey";
             } else {
-                  document.getElementById("message").innerText = "Selamat datang! Anda tidak melakukan bypass.";
+                alert("Are you sure you are legit ??...");
+                window.location.href = "https://link-hub.net/1277016/keysystem";
             }
-        }
-
-          window.onload = checkBypass;
+        });
     </script>
 </head>
 <body>
-    <h1 id="message"></h1>
+    <h2 id="result">Memeriksa Token...</h2>
 </body>
 </html>
