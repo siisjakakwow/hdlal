@@ -6,20 +6,26 @@
     <title>SpiderKey</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // URL vertise dan token asli
+            const vertiseUrl = "https://link-hub.net/1277016/keysystem";
             const validToken = "3a8e682adb0cb07705f22321089ef0174b0e9c9232a131b883b8c189c863288b";
+
+            // Cek apakah halaman diakses dari referer vertise
+            const referrer = document.referrer;
             const urlParams = new URLSearchParams(window.location.search);
             const userToken = urlParams.get("token");
 
-            if (userToken === validToken) {
+            // Validasi token dan referrer
+            if (referrer.includes("link-hub.net") && userToken === validToken) {
                 document.getElementById("result").innerText = "SpiderKey";
             } else {
-                alert("Anda belum melewati link vertise. Mengarahkan kembali...");
-                window.location.href = "https://link-hub.net/1277016/keysystem";
+                alert("Anda belum melewati link vertise dengan benar. Mengarahkan kembali...");
+                window.location.href = vertiseUrl;
             }
         });
     </script>
 </head>
 <body>
-    <h2 id="result">Memeriksa Token...</h2>
+    <h2 id="result">Memeriksa akses...</h2>
 </body>
 </html>
