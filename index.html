@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti Bypass</title>
+    <script>
+        
+        const token = "3a8e682adb0cb07705f22321089ef0174b0e9c9232a131b883b8c189c863288b";
+        const originalLink = "https://link-hub.net/1277016/keysystem";
+
+        
+        function checkBypass() {
+                const bypassDetected = false; // Ganti dengan logika deteksi yang sesuai
+
+            if (bypassDetected) {
+                 window.location.href = originalLink;
+            } else {
+                  document.getElementById("message").innerText = "Selamat datang! Anda tidak melakukan bypass.";
+            }
+        }
+
+          window.onload = checkBypass;
+    </script>
+</head>
+<body>
+    <h1 id="message"></h1>
+</body>
+</html>
